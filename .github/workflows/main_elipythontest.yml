@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'EliPythonTest'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1FDD4B747EA64F6EB35F9A5263F39A4C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_86E49703036A49E6BA7F324EC5FA4763 }}
