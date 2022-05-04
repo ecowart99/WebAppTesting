@@ -55,4 +55,3 @@ plt.annotate(maxStr, (0, 0), xytext=(0.45, 0.7), textcoords='axes fraction', fon
 plt.annotate(hourStr, (0, 0), xytext=(0.45, 0.6), textcoords='axes fraction', fontsize = 14)
 
 fig.show()
-print('Hi')
