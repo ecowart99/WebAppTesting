@@ -1,4 +1,5 @@
 import pandas as pd
+%matplotlib inline
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -35,7 +36,7 @@ overHour =dfMax.iloc[0]['index']
 dfMin = df[df['Percentile'] == minPercent / 100]
 minLoad = dfMin['LoadHourlyAvg'].min()
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(12,6), facecolor='w')
 cnts, values, bars = ax.hist(df['LoadHourlyAvg'], edgecolor='k', bins = histBins)
 
 for i, (cnt, value, bar) in enumerate(zip(cnts, values, bars)):
