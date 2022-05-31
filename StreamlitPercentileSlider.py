@@ -14,6 +14,6 @@ cnts, values, bars = ax.hist(cooling['LoadHourlyAvg'], edgecolor='k', bins = his
 
 plt.xlabel('Cooling Load (Btu/h)', fontsize = 18)
 plt.ylabel('Count of Hours', fontsize = 18)
-plt.title('Histogram of San Leandro Patient Room Btu/h', fontsize = 24)
+plt.title('Histogram of San Leandro Patient Room btu/h', fontsize = 24)
 
 fig.show()
