@@ -6,7 +6,7 @@ import numpy as np
 maxPercent = st.slider('Maximum Percentile', 0, 100)
 minPercent = st.slider('Minimum Percentile', 0, 100)
 
-cooling = pd.read_csv('C:/Users/ecowart/SmithGroup Companies Inc/Internal Projects/WebApps/Streamlit/smallCoolingData.csv')
+cooling = pd.read_csv('smallCoolingData.csv')
 
 histBins = np.arange(cooling['LoadHourlyAvg'].min(), cooling['LoadHourlyAvg'].nlargest(50).iloc[-1], 100)
 fig, ax = plt.subplots(figsize=(12,6), facecolor='w')
