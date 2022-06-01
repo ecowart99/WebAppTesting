@@ -69,15 +69,15 @@ selectedData.rename(columns = {'level_0': 'index'}, inplace = True)
 selectedData['Percentile'] = selectedData['index'].rank(ascending = False, method = 'dense', pct = True)
 selectedData['Percentile']= round(selectedData['Percentile'], 3)
 
-# Setup figure object and bins
-if len(selectedData) > 10000:
+# Setup bins
+if selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1] > 2500:
     histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 100)
-elif len(selectedData) > 5000:
+elif selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1] > 1000:
     histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 50)
-elif len(selectedData) > 100:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 20)
 else:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 10)
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 20)
+
+# Setup Figure object
 fig, ax = plt.subplots(figsize=(12,6), facecolor='w')
 cnts, values, bars = ax.hist(selectedData['LoadHourlyAvg'], edgecolor='k', bins = histBins)
 
