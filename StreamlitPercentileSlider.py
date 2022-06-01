@@ -70,12 +70,12 @@ selectedData['Percentile'] = selectedData['index'].rank(ascending = False, metho
 selectedData['Percentile']= round(selectedData['Percentile'], 3)
 
 # Setup bins
-if selectedData['LoadHourlyAvg'].min() > 2500:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].min(), 100)
-elif selectedData['LoadHourlyAvg'].min() > 1000:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].min(), 50)
+if selectedData['LoadHourlyAvg'].max() > 2500:
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].max(), 100)
+elif selectedData['LoadHourlyAvg'].max() > 1000:
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].max(), 50)
 else:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].min(), 20)
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].max(), 20)
 
 # Setup Figure object
 fig, ax = plt.subplots(figsize=(12,6), facecolor='w')
