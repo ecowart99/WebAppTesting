@@ -115,3 +115,7 @@ plt.annotate(hourStr, (0, 0), xytext=(0.48, 0.8), textcoords='axes fraction', fo
 
 # Display chart
 container4.pyplot(fig)
+
+# Balloons
+if minPercent == maxPercent:
+    st.balloons()
