@@ -110,8 +110,8 @@ hourStr = ('Cooling load greater in ' + str(int(overHour)) + ' hours out of ' + 
 plt.xlabel('Cooling Load (Btu/h)', fontsize = 18)
 plt.ylabel('Count of Hours', fontsize = 18)
 plt.title('Histogram of San Leandro Patient Room Btu/h', fontsize = 24)
-plt.annotate(maxStr, (0, 0), xytext=(0.45, 0.7), textcoords='axes fraction', fontsize = 14)
-plt.annotate(hourStr, (0, 0), xytext=(0.45, 0.6), textcoords='axes fraction', fontsize = 14)
+plt.annotate(maxStr, (0, 0), xytext=(0.5, 0.9), textcoords='axes fraction', fontsize = 14)
+plt.annotate(hourStr, (0, 0), xytext=(0.5, 0.8), textcoords='axes fraction', fontsize = 14)
 
 # Display chart
 container4.pyplot(fig)
