@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import Dataset (cleaned elsewhere beforehand)
-cooling = pd.read_csv('smallCoolingData.csv')
+cooling = pd.read_csv('C:/Users/ecowart/SmithGroup Companies Inc/Internal Projects/WebApps/Streamlit/smallCoolingData.csv')
 cooling.drop(columns=['index', 'Unnamed: 0'], inplace = True)
 
 # Create containers to organize widgets
@@ -70,7 +70,14 @@ selectedData['Percentile'] = selectedData['index'].rank(ascending = False, metho
 selectedData['Percentile']= round(selectedData['Percentile'], 3)
 
 # Setup figure object and bins
-histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 100)
+if len(selectedData) > 10000:
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 100)
+elif len(selectedData) > 5000:
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 50)
+elif len(selectedData) > 100:
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 20)
+else:
+    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 10)
 fig, ax = plt.subplots(figsize=(12,6), facecolor='w')
 cnts, values, bars = ax.hist(selectedData['LoadHourlyAvg'], edgecolor='k', bins = histBins)
 
