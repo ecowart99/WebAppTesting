@@ -69,15 +69,8 @@ selectedData.rename(columns = {'level_0': 'index'}, inplace = True)
 selectedData['Percentile'] = selectedData['index'].rank(ascending = False, method = 'dense', pct = True)
 selectedData['Percentile']= round(selectedData['Percentile'], 3)
 
-# Setup bins
-if selectedData['LoadHourlyAvg'].max() > 2500:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].max(), 100)
-elif selectedData['LoadHourlyAvg'].max() > 1000:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].max(), 50)
-else:
-    histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].max(), 20)
-
-# Setup Figure object
+# Setup figure object and bins
+histBins = np.arange(selectedData['LoadHourlyAvg'].min(), selectedData['LoadHourlyAvg'].nlargest(50).iloc[-1], 100)
 fig, ax = plt.subplots(figsize=(12,6), facecolor='w')
 cnts, values, bars = ax.hist(selectedData['LoadHourlyAvg'], edgecolor='k', bins = histBins)
 
