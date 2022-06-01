@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Import Dataset (cleaned elsewhere beforehand)
-cooling = pd.read_csv('C:/Users/ecowart/SmithGroup Companies Inc/Internal Projects/WebApps/Streamlit/smallCoolingData.csv')
+cooling = pd.read_csv('smallCoolingData.csv')
 cooling.drop(columns=['index', 'Unnamed: 0'], inplace = True)
 
 # Create containers to organize widgets
