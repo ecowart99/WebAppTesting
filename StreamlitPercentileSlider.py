@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-with open('C:/Users/ecowart/SmithGroup Companies Inc/Internal Projects/WebApps/Streamlit/style.css') as style:
+with open('style.css') as style:
      st.markdown(f'<style>{style.read()}</style>', unsafe_allow_html = True)
 
 # def check_password():
@@ -38,7 +38,7 @@ with open('C:/Users/ecowart/SmithGroup Companies Inc/Internal Projects/WebApps/S
 # if check_password():
     
 # Import Dataset (cleaned elsewhere beforehand)
-cooling = pd.read_csv('C:/Users/ecowart/SmithGroup Companies Inc/Internal Projects/WebApps/Streamlit/smallCoolingData.csv')
+cooling = pd.read_csv('smallCoolingData.csv')
 cooling.drop(columns=['index', 'Unnamed: 0'], inplace = True)
 
 # Create containers to organize widgets
