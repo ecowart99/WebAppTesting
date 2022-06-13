@@ -145,7 +145,7 @@ if check_password():
      # Add lables/titles and annotations
      plt.xlabel('Cooling Load (Btu/h)', fontsize = 18)
      plt.ylabel('Count of Hours', fontsize = 18)
-     ax.set_title('Histogram of San Leandro Patient Room Btu/h', fontproperties=prop, size=24)
+     ax.set_title('Histogram of San Leandro Patient Room Btu/h', fontproperties = sgFont, size=24)
      plt.annotate(maxStr, (0, 0), xytext=(0.48, 0.9), textcoords='axes fraction', fontsize = 14)
      plt.annotate(hourStr, (0, 0), xytext=(0.48, 0.8), textcoords='axes fraction', fontsize = 14)
 
