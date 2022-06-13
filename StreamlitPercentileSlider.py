@@ -140,7 +140,7 @@ if check_password():
      hourStr = ('Cooling load greater in ' + str(int(overHour)) + ' hours out of ' + str(len(selectedData)))
 
      # Add lables/titles and annotations
-     plt.xlabel('Cooling Load (Btu/h)', fontsize = 18)
+     plt.xlabel('Cooling Load (Btu/h)', fontsize = 18, family = 'Kapra Neue')
      plt.ylabel('Count of Hours', fontsize = 18)
      plt.title('Histogram of San Leandro Patient Room Btu/h', fontsize = 24)
      plt.annotate(maxStr, (0, 0), xytext=(0.48, 0.9), textcoords='axes fraction', fontsize = 14)
