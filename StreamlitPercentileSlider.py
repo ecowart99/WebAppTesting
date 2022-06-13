@@ -3,6 +3,9 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.font_manager as fm
+
+sgFont = fm.FontProperties(fname = 'kapra-neue-semibold-expanded.otf')
 
 with open('style.css') as style:
      st.markdown(f'<style>{style.read()}</style>', unsafe_allow_html = True)
@@ -140,9 +143,9 @@ if check_password():
      hourStr = ('Cooling load greater in ' + str(int(overHour)) + ' hours out of ' + str(len(selectedData)))
 
      # Add lables/titles and annotations
-     plt.xlabel('Cooling Load (Btu/h)', fontsize = 18, family = 'Kapra Neue')
+     plt.xlabel('Cooling Load (Btu/h)', fontsize = 18)
      plt.ylabel('Count of Hours', fontsize = 18)
-     plt.title('Histogram of San Leandro Patient Room Btu/h', fontsize = 24)
+     ax.set_title('Histogram of San Leandro Patient Room Btu/h', fontproperties=prop, size=24)
      plt.annotate(maxStr, (0, 0), xytext=(0.48, 0.9), textcoords='axes fraction', fontsize = 14)
      plt.annotate(hourStr, (0, 0), xytext=(0.48, 0.8), textcoords='axes fraction', fontsize = 14)
 
