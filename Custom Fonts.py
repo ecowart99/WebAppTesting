@@ -1,8 +1,5 @@
-import matplotlib.font_manager as fm
 import plotly.express as px
 import streamlit as st
-
-sgFont = fm.FontProperties(fname = 'kapra-neue-semibold-expanded.otf')
 
 df = px.data.tips()
 
