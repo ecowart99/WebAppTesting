@@ -45,7 +45,7 @@ try:
 
     #Create file name
     today = date.today()
-    filename = str(today) + '_' + uploaded_file.name + '_py'
+    filename = str(today) + '_' + uploaded_file.name
 
     #Convert csv to string
     scheduleStr = schedule.to_csv()
